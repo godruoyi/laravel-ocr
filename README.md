@@ -29,6 +29,11 @@ Godruoyi\LaravelOCR\OCRServiceProvider::class,
 
 'OCR' => Godruoyi\LaravelOCR\OCR::class,
 ```
+### 发布配置文件
+
+```shell
+php artisan vendor:publish --provider="Godruoyi\LaravelOCR\OCRServiceProvider"
+```
 
 ## 使用
 
@@ -36,7 +41,7 @@ Godruoyi\LaravelOCR\OCRServiceProvider::class,
 use OCR;
 
 // 身份证识别
-OCR::baidu->idcard($filePath);
+OCR::baidu()->idcard($filePath);
 
 ```
 
