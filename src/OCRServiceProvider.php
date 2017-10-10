@@ -19,6 +19,8 @@ class OCRServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $root = dirname(__DIR__);
+
         if (!file_exists(config_path('ocr.php'))) {
             $this->publishes([
                 $root.'/config/ocr.php' => config_path('ocr.php'),
