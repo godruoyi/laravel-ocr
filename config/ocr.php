@@ -6,7 +6,7 @@ return [
     | Ocr config
     |--------------------------------------------------------------------------
     |
-    | 目前支持的OCR服务商有 aliyun、baidu、tencent，具体配置如下
+    | 目前支持的OCR服务商有 aliyun、baidu、tencent、tencentai 具体配置如下
     |
     */
 
@@ -22,6 +22,11 @@ return [
             'secret_id' => 'secret_id',
             'secret_key' => 'secret_key',
             'bucket' => 'bucket'
+        ],
+
+        'tencentai' => [
+            'app_id' => 'app_id',
+            'app_key' => 'app_key',
         ],
 
         'aliyun' => [
