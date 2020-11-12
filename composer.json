@@ -13,8 +13,10 @@
     ],
     "require": {
         "godruoyi/ocr": "^2.0",
-        "laravel/f": "^5",
+        "illuminate/framework": "^5.1 || ^6.0 || ^7.0 || ^8.0",
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Godruoyi\\LaravelOCR\\": "src/"
