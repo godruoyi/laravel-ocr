@@ -1,7 +1,7 @@
 {
     "name": "godruoyi/laravel-ocr",
     "description": "The Best Image Ocr SDK For BAT.",
-    "keywords": ["ocr", "image", "百度OCR", "腾讯OCR", "阿里云OCR"],
+    "keywords": ["ocr", "ocr sdk", "laravel ocr", "php ocr"],
     "homepage": "http://github.com/godruoyi/ocr",
     "type": "library",
     "license": "MIT",
@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "godruoyi/ocr": "^1.1"
+        "godruoyi/ocr": "^2.0",
+        "laravel/f": "^5",
     },
     "autoload": {
         "psr-4": {

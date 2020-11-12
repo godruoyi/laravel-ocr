@@ -1,36 +1,48 @@
 <?php
 
+/*
+ * This file is part of the godruoyi/ocr.
+ *
+ * (c) Godruoyi <gmail@godruoyi.com>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
 return [
+
     /*
     |--------------------------------------------------------------------------
-    | Ocr config
+    | Default client
     |--------------------------------------------------------------------------
     |
-    | 目前支持的OCR服务商有 aliyun、baidu、tencent、tencentai 具体配置如下
+    | 指定一个默认的 client 名称，其值需要在下列的 drivers 数组中配置。
     |
     */
+    'default' => env('OCR_DEFAULT_CLIENT', 'baidu'),
 
-    'ocrs' => [
+    /*
+    |--------------------------------------------------------------------------
+    | Client 配置
+    |--------------------------------------------------------------------------
+    |
+    | Client 配置信息，包括基本密钥等；注意目前 aliyun 暂只支持 appcode 方式。
+    |
+    */
+    'drivers' => [
+        'aliyun' => [
+            'appcode'    => '',
+            'secret_id'  => '',
+            'secret_key' => '',
+        ],
 
         'baidu' => [
-            'app_key' => 'app_key',
-            'secret_key' => 'secret_key'
+            'access_key' => '',
+            'secret_key' => '',
         ],
 
         'tencent' => [
-            'app_id' => 'app_id',
-            'secret_id' => 'secret_id',
-            'secret_key' => 'secret_key',
-            'bucket' => 'bucket'
+            'secret_id'  => '',
+            'secret_key' => '',
         ],
-
-        'tencentai' => [
-            'app_id' => 'app_id',
-            'app_key' => 'app_key',
-        ],
-
-        'aliyun' => [
-            'appcode' => 'appcode',
-        ]
-    ]
+    ],
 ];

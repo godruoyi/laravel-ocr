@@ -1,3 +1,9 @@
-composer.lock
-vendor
 .editorconfig
+*.DS_store
+vendor
+composer.lock
+.DS_Store
+.php_cs.cache
+.idea
+*.DS_Store
+*.log

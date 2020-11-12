@@ -19,13 +19,9 @@ class OCRServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $root = dirname(__DIR__);
-
-        if (!file_exists(config_path('ocr.php'))) {
-            $this->publishes([
-                $root.'/config/ocr.php' => config_path('ocr.php'),
-            ], 'config');
-        }
+        $this->publishes([
+            __DIR__.'/../config/ocr.php' => config_path('ocr.php'),
+        ], 'config');
     }
 
     /**
@@ -33,8 +29,6 @@ class OCRServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(dirname(__DIR__).'/config/ocr.php', 'ocr');
-
         $this->app->singleton(Application::class, function () {
             return new Application(config('ocr'));
         });
