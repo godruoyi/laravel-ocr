@@ -42,10 +42,12 @@ use OCR;
 
 // 身份证识别
 OCR::baidu()->idcard($filePath);
-
 ```
 
-更多 SDK 的具体使用请参考： [https://github.com/godruoyi/ocr](https://github.com/godruoyi/ocr)
+更多 SDK 使用请参考： 
+
+* [使用 Wiki](https://github.com/godruoyi/ocr)
+* [作者博客](https://godruoyi.com)
 
 ## License
 
