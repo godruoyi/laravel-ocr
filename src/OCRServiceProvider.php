@@ -15,20 +15,18 @@ class OCRServiceProvider extends ServiceProvider
     protected $defer = true;
 
     /**
-     * Bootstrap any application services.
-     */
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__.'/../config/ocr.php' => config_path('ocr.php'),
-        ], 'config');
-    }
-
-    /**
      * Register any application services.
      */
     public function register()
     {
+        $source = realpath(__DIR__.'/../config/ocr.php');
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([$source => config_path('ocr.php')], 'ocr');
+        }
+
+        $this->mergeConfigFrom($source, 'ocr');
+
         $this->app->singleton(Application::class, function () {
             return new Application(config('ocr'));
         });
