@@ -28,7 +28,13 @@ class OCRServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($source, 'ocr');
 
         $this->app->singleton(Application::class, function () {
-            return new Application(config('ocr'));
+            $ocrApp = new Application(config('ocr'));
+
+            if (config('ocr.laravel_cache')) {
+                $ocrApp->rebindCache(app('cache.store'));
+            }
+
+            return $ocrApp;
         });
 
         $this->app->alias(Application::class, 'ocr');
