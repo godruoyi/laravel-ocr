@@ -21,7 +21,7 @@ class OCR extends Facade
     /**
      * Aliyun client.
      *
-     * @return \Godruoyi\OCR\Contracts\Client
+     * @return Client
      */
     public static function aliyun()
     {
@@ -31,7 +31,7 @@ class OCR extends Facade
     /**
      * Baidu Client.
      *
-     * @return \Godruoyi\OCR\Contracts\Client
+     * @return Client
      */
     public static function baidu()
     {
@@ -41,7 +41,7 @@ class OCR extends Facade
     /**
      * Tencent Client.
      *
-     * @return \Godruoyi\OCR\Contracts\Client
+     * @return Client
      */
     public static function tencent()
     {
